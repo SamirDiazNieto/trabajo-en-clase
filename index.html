@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Empleados</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/script.js"></script>
+</head>
+
+<body>
+
+    <section class="menu">
+
+<header>
+    <h1>Listado General de Empleados</h1>
+</header>
+    </section>
+
+    <section class="contenedor-izquierdo">
+        <form action="" class="ingresar-empleado">
+            <input type="text" name="nombre" id="nombres" placeholder="Nombre del Empleado" required onchange="ValidaNombre()">
+            <p id="msjNombres"></p>
+            <input type="text" name="apellidos" id="apellidos" placeholder="Apellidos del Empleado" required onchange="ValidarApellido()">
+            <p id="msjApellidos"></p>
+            <select name="" id="cargo" required onchange="ValidarCargo()">
+                <option value="elije">Elije una opción</option>
+                <option value="Ingeniero">Ingeniero</option>
+                <option value="Diseñador">Diseñador</option>
+                <option value="Analista QA">Analista QA</option>
+            </select>
+            <p id="msjCargo"></p>
+            <input type="number" name="salario" id="salario" placeholder="Salario" required onchange="ValidarSalario()">
+            <p id="msjSalario"></p>
+            <input type="number" name="cuenta" id="cuenta" placeholder="Cuenta Bancaria" required onchange="ValidarCuenta()">
+            <p id="msjCuenta"></p>
+            <input type="email" name="correo" id="correo" placeholder="Correo Electronico" required onchange="ValidarCorreo()">
+            <p id="msjCorreo"></p>
+            <div class="checkbox ">
+                <label><input type="checkbox" onclick="check.disabled=!this.checked" value="disa">Acepto Terminos y Condiciones</label>
+                <label><input type="checkbox" onclick="guardar.disabled=!this.checked" value="disa" id="check" disabled="">Acepto Políticas de Privacidad</label>
+            </div>
+            <button class="botones" type="button" id="guardar" onclick="crearEmpleado()" disabled="" > Guardar</button>
+
+        </form>
+    </section>
+    <aside class="contenedor-derecha">
+        <header>
+            <center>
+                <h2>Empresas S.A:</h2>
+                <h2>Lista de Empleados</h2>
+            </center>
+        </header>
+        <hr>
+        <center>
+              <table  class="listado" id="listado"> 
+                <thead >
+                    <tr id="encabezado">
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Cargo</th>
+                        <th>Salario</th>
+                        <th>Cuenta Bancaria</th>
+                        <th>Correo</th>
+                    </tr>
+                </thead>
+              </table>
+        </center>
+        <button class="botones" type="button" id="listar" onclick="listarEmpleados()"> Listar</button>
+    </aside>
+    <footer class="footer">
+
+        <header>
+            <center>
+                <h3>Todos los Derechos Reservados</h3>
+                <h3>Empresa S.A.</h3>
+            </center>
+        </header>
+    </footer>
+</body>
+
+</html>
